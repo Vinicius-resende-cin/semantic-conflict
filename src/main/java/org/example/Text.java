@@ -15,7 +15,12 @@ public class Text {
     }
 
     public void cleanText() {
+        normalizeWhiteSpaces();
         removeComments();
+    }
+
+    private void normalizeWhiteSpaces() {
+        this.text = this.text.replaceAll(" +", " ");
     }
 
     private void removeComments() {
