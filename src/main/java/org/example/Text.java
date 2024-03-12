@@ -18,6 +18,7 @@ public class Text {
 
     public void cleanText() {
         removeComments();
+        removeDuplicateWords();
     }
 
     private void removeComments() {
