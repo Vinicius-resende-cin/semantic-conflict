@@ -19,6 +19,7 @@ public class Text {
     public void cleanText() {
         normalizeWhiteSpaces();
         removeComments();
+        removeDuplicateWords();
     }
 
     private void removeComments() {
