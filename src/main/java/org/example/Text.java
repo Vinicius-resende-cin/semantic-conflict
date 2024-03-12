@@ -17,6 +17,7 @@ public class Text {
     public void cleanText() {
         normalizeWhiteSpaces();
         removeComments();
+        removeDuplicateWords();
     }
 
     private void normalizeWhiteSpaces() {
@@ -25,5 +26,15 @@ public class Text {
 
     private void removeComments() {
         this.text = this.text.lines().filter(line -> !line.startsWith("//")).reduce("", String::concat);
+    }
+
+    private void removeDuplicateWords() {
+        String regex = "\\b(\\w+)((?:\\W+\\1\\b)+)";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(this.text);
+
+        while (m.find()) {
+            this.text = this.text.replaceAll(m.group(), m.group(2));
+        }
     }
 }
