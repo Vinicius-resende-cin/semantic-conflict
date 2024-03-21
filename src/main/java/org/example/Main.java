@@ -1,9 +1,10 @@
 package org.example;
 
+import samples.*;
+
 public class Main {
     public static void main(String[] args) {
-        Text text = new Text("Hello world  world!");
-        text.cleanText();
-        System.out.println(text.getText());
+        OverrideAssignmentVariable OAVarConflict = new OverrideAssignmentVariable();
+        OAVarConflict.conflict();
     }
 }
