@@ -6,6 +6,7 @@ public class OverrideAssignmentVariable {
         if (x > 0) {
             System.out.println(x);
         }
+        x = 2;
         System.out.println(x);
     }
 
