@@ -8,7 +8,7 @@ public class DFPBaseSample {
 
     public void cleanText(){
         DFPBaseSample inst = new DFPBaseSample();
-
+        inst.normalizeWhiteSpace(); //Left
         inst.removeComments();
 
     }
