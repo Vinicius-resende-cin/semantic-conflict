@@ -10,7 +10,7 @@ public class DFPBaseSample {
         DFPBaseSample inst = new DFPBaseSample();
         inst.normalizeWhiteSpace(); //Left
         inst.removeComments();
-
+        inst.removeDuplicateWords(); //Right
     }
 
     private void normalizeWhiteSpace(){
