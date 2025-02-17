@@ -5,5 +5,6 @@ public class OAInterSample {
     public static void conflict() {
         bar.x += 2;
         System.out.println(bar.x);
+        RightAssignment.sub1(bar);
     }
 }
