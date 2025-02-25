@@ -5,6 +5,7 @@ public class Main {
     static int y = 0;
     public static void main(String[] args) {
         System.out.println(x);
+        add1toX();
         System.out.println(y);
         int z = x + y;
         System.out.println(z);
