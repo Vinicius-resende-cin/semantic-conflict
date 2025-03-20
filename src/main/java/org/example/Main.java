@@ -1,11 +1,11 @@
 package org.example;
 
 public class Main {
+    static Foo a = new Foo();
+    static Foo b = new Foo();
     public static void main(String[] args) {
-        int x = 0;
-        x = AddOne.plusOne(x); //left
-        int y = 0;
-        int z = x + y;
+        AddOne.plusOne(a); //left
+        int z = a.x + b.x;
         System.out.println(z);
     }
 }
