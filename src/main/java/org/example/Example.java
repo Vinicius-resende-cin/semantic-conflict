@@ -1,5 +1,5 @@
 package org.example;
 
-public class Foo {
+public class Example {
     Integer x = 1;
 }
