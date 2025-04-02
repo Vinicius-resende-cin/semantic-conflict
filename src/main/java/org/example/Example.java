@@ -1,5 +1,5 @@
 package org.example;
 
 public class Example {
-    Integer x = 1;
+    int x = 1;
 }
