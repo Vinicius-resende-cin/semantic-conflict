@@ -5,7 +5,7 @@ public class Main {
     static int y = 0;
 
     public static void main(String[] args) {
-
+        addX();
         System.out.println("divider");
         
         int z = x + y;
