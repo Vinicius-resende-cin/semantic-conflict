@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Left.plus(); // Left
         System.out.println("divider");
-        
+        Right.add(); // Right
         int z = a + b;
         System.out.println(z);
     }
