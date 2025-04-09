@@ -9,6 +9,6 @@ public class OAInterSample {
     }
 
     public static void subConflict(Foo bar) {
-        System.out.println(bar.x);
+        LeftAssignment.sum2(bar);
     }
 }
