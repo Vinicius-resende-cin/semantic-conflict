@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         AddOne.PlusOne(a); //left
         System.out.println("divider");
-        
+        PlusOne.AddOne(b); //right
         int z = a.x + b.x;
         System.out.println(z);
     }
