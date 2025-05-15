@@ -1,0 +1,53 @@
+package org.example;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Text {
+
+    private String text;
+
+    public Text(String text) {
+        this.text = text;
+    }
+
+    public void cleanText(){
+        removeComments();
+    }
+
+    private void removeComments(){
+        String pattern = "(\".*?\"|'.*?')|(/\\*.*?\\*/|//.*?$)";
+        Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
+        Matcher matcher = regex.matcher(text);
+        StringBuffer buffer = new StringBuffer();
+        while (matcher.find()) {
+            if (matcher.group(1) != null) {
+                matcher.appendReplacement(buffer, matcher.group(1));
+            } else {
+                matcher.appendReplacement(buffer, "");
+            }
+        }
+        matcher.appendTail(buffer);
+        text = buffer.toString();
+    }
+
+    private void normalizeWhiteSpace(){
+        text.replace("  ", "");
+    }
+
+    private void removeDuplicateWords(){
+        String[] words = text.split(" ");
+        StringBuilder result = new StringBuilder(words[0]);
+        for (int i = 1; i < words.length; i++) {
+            if (!words[i].equals(words[i - 1])) {
+                result.append(" ");
+                result.append(words[i]);
+            }
+        }
+
+        text = result.toString();
+    }
+
+    public String getText() {
+        return text;
+    }
+}
