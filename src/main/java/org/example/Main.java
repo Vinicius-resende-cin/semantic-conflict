@@ -5,6 +5,5 @@ public class Main {
         String input = "lorem ipsum";
         Text a = new Text(input);
         a.cleanText();
-        System.out.println("Clean Text:\n" + a.getText());
     }
 }
