@@ -17,7 +17,7 @@ public class Text {
     private void removeComments(){
         String pattern = "(\".*?\"|'.*?')|(/\\*.*?\\*/|//.*?$)";
         Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
-        Matcher matcher = regex.matcher(text);
+        Matcher matcher = regex.matcher(this.text);
         StringBuffer buffer = new StringBuffer();
         while (matcher.find()) {
             if (matcher.group(1) != null) {
@@ -27,15 +27,15 @@ public class Text {
             }
         }
         matcher.appendTail(buffer);
-        text = buffer.toString();
+        this.text = buffer.toString();
     }
 
     private void normalizeWhiteSpace(){
-        text.replace("  ", "");
+        this.text = text.replace("  ", "");
     }
 
     private void removeDuplicateWords(){
-        String[] words = text.split(" ");
+        String[] words = this.text.split(" ");
         StringBuilder result = new StringBuilder(words[0]);
         for (int i = 1; i < words.length; i++) {
             if (!words[i].equals(words[i - 1])) {
@@ -44,10 +44,10 @@ public class Text {
             }
         }
 
-        text = result.toString();
+        this.text = result.toString();
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
 }
