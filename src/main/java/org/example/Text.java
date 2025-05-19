@@ -4,20 +4,14 @@ import java.util.regex.Pattern;
 
 public class Text {
 
-    private String text;
-
-    public Text(String text) {
-        this.text = text;
+    public static String cleanText(String text) {
+        return removeComments(text);
     }
 
-    public void cleanText(){
-        removeComments();
-    }
-
-    private void removeComments(){
+    private static String removeComments(String text) {
         String pattern = "(\".*?\"|'.*?')|(/\\*.*?\\*/|//.*?$)";
         Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
-        Matcher matcher = regex.matcher(this.text);
+        Matcher matcher = regex.matcher(text);
         StringBuffer buffer = new StringBuffer();
         while (matcher.find()) {
             if (matcher.group(1) != null) {
@@ -27,27 +21,23 @@ public class Text {
             }
         }
         matcher.appendTail(buffer);
-        this.text = buffer.toString();
+        return buffer.toString();
     }
 
-    private void normalizeWhiteSpace(){
-        this.text = text.replace("  ", "");
+    public static String normalizeWhiteSpace(String text) {
+        return text.replaceAll("\\s{2,}", " ");
     }
 
-    private void removeDuplicateWords(){
-        String[] words = this.text.split(" ");
-        StringBuilder result = new StringBuilder(words[0]);
+    public static String removeDuplicateWords(String text) {
+        String[] words = text.split(" ");
+        StringBuilder result = new StringBuilder();
+        result.append(words[0]);
         for (int i = 1; i < words.length; i++) {
             if (!words[i].equals(words[i - 1])) {
                 result.append(" ");
                 result.append(words[i]);
             }
         }
-
-        this.text = result.toString();
-    }
-
-    public String getText() {
-        return this.text;
+        return result.toString();
     }
 }
