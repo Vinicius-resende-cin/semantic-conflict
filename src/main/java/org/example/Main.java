@@ -2,7 +2,8 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Text.setText("Hello  world world! // comment here");
-        Text.cleanText();
+        String input = "Hello  world world! // comment here";
+        Text t = new Text(input);
+        t.cleanText();
     }
 }

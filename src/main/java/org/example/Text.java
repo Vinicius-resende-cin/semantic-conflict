@@ -4,21 +4,21 @@ import java.util.regex.Pattern;
 
 public class Text {
 
-    private static String text;
+    private String text;
 
-    public static void setText(String newText) {
+    Text(String newText) {
         text = newText;
     }
 
-    public static String getText() {
+    public String getText() {
         return text;
     }
 
-    public static void cleanText() {
+    public void cleanText() {
         removeComments();
     }
 
-    private static void removeComments() {
+    private void removeComments() {
         String pattern = "(\".*?\"|'.*?')|(/\\*.*?\\*/|//.*?$)";
         Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
         Matcher matcher = regex.matcher(text);
@@ -34,11 +34,11 @@ public class Text {
         text = buffer.toString();
     }
 
-    public static void normalizeWhiteSpace() {
+    public void normalizeWhiteSpace() {
         text = text.replaceAll("\\s{2,}", " ");
     }
 
-    public static void removeDuplicateWords() {
+    public void removeDuplicateWords() {
         String[] words = text.split(" ");
         StringBuilder result = new StringBuilder(words[0]);
         for (int i = 1; i < words.length; i++) {
