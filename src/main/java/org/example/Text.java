@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 public class Text {
 
     private String text;
+    private String text;
 
     Text(String newText) {
         text = newText;
