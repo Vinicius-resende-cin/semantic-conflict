@@ -5,6 +5,7 @@ public class Main {
         String input = "the the dog";
         Text t = new Text(input);
         t.removeComments();
+        t.removeDuplicateWords();
         System.out.println(t.getText());
     }
 }
