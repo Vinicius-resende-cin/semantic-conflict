@@ -2,8 +2,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String input = "Hello  world world! // comment here";
+        String input = args[0];
         Text t = new Text(input);
-        t.cleanText();
+        t.removeComments();
+        System.out.println(t.getText());
     }
 }
