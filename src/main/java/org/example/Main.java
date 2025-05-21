@@ -5,6 +5,7 @@ public class Main {
         String input = args[0];
         Text t = new Text(input);
         t.removeComments();
+        t.removeDuplicateWords();
         System.out.println(t.getText());
     }
 }
