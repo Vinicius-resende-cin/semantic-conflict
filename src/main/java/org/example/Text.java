@@ -14,11 +14,7 @@ public class Text {
         return text;
     }
 
-    public void cleanText() {
-        removeComments();
-    }
-
-    private void removeComments() {
+    public void removeComments() {
         String pattern = "(\".*?\"|'.*?')|(/\\*.*?\\*/|//.*?$)";
         Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
         Matcher matcher = regex.matcher(text);
