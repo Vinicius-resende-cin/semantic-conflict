@@ -6,6 +6,7 @@ public class Main {
         Text t = new Text(input);
         t.normalizeWhiteSpace();
         t.removeComments();
+        t.removeDuplicateWords();
         System.out.println(t.getText());
     }
 }
