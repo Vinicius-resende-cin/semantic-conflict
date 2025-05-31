@@ -1,17 +1,21 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Detective detective = new Detective("Sherlock Holmes");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        CaseFile case1 = new CaseFile("The Misterious Theft in the Museum");
+        case1.addClue(new Clue("Digital printing on the display window", 8));
+        case1.addClue(new Clue("VIP report found", 9));
+
+        CaseFile case2 = new CaseFile("Disappearance in the Park");
+        case2.addClue(new Clue("Footprints found in the mud\r\n", 5));
+        case2.addClue(new Clue("Witness saw hooded figure", 6));
+
+        detective.addCaseFile(case1);
+        detective.addCaseFile(case2);
+
+        detective.solveCase(case1);
+        detective.solveCase(case2);
     }
 }
