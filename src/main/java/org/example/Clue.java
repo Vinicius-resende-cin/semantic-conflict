@@ -24,4 +24,14 @@ public class Clue {
     public boolean contains(String text) {
         return description.contains(text);
     }
+
+    // current change
+    /**
+     * Returns whether this {@link Clue} is insignificant, i.e., its significance is zero.
+     *
+     * @return Whether this {@link Clue} is insignificant
+     */
+    public boolean isInsignificant() {
+        return significance <= 0;
+    }
 }
