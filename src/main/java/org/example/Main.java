@@ -2,6 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Clue clue = new Clue("Digital printing on the display window", -1);
+        Clue c = new Clue("texto base", -1);
+        System.out.println("hello world");
     }
 }
