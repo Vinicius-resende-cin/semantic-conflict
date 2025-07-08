@@ -2,7 +2,8 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Clue c = new Clue("lorem ipsum", -1);
+        CaseFile case1 = new CaseFile("Museum Robbery");
+        case1.addClue(new Clue("footprints found on back window", 5));
         System.out.println("hello world");
     }
 }
