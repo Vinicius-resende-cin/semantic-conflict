@@ -1,5 +1,6 @@
 package org.example;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Deque;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class CaseFile {
 
     public CaseFile(String caseName) {
         this.caseName = caseName;
-        this.clues = new ArrayList<>();
+        this.clues = new LinkedList<>();
     }
 
     public String getCaseName() { return caseName; }
