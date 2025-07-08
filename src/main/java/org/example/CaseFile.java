@@ -14,6 +14,10 @@ public class CaseFile {
 
     public String getCaseName() { return caseName; }
 
+    public Clue removeLatestClue() { // previous change
+        return ((Deque<Clue>) this.clues).removeLast();
+    }
+
     public void addClue(Clue clue) { this.clues.add(clue); }
     public List<Clue> getClues() { return  clues; }
 
