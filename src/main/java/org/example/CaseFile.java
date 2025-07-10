@@ -8,15 +8,28 @@ public class CaseFile {
     private String caseName;
     private List<Clue> clues;
 
-    public CaseFile(String caseName) {
+     private float importanceFactor; // previous change
+
+    public CaseFile(String caseName, float importanceFactor) { // previous change
         this.caseName = caseName;
         this.clues = new LinkedList<>();
+        this.importanceFactor = importanceFactor; // previous change
     }
 
     public String getCaseName() { return caseName; }
 
     public void addClue(Clue clue) { this.clues.add(clue); }
     public List<Clue> getClues() { return  clues; }
+
+    /**
+     * Returns a factor describing how important it is to resolve this
+     * case, i.e., how strong the evidence needs to be.
+     *
+     * @return The importance factor
+     */
+    public float getImportanceFactor() { // previous change
+        return importanceFactor;
+    }
 
     public List<Clue> cluesContaining(String text) {
         List<Clue> relevantClues = new ArrayList<>();

@@ -31,7 +31,7 @@ public class Detective {
                 totalSignificance += clue.getSignificance();
             }
 
-            averageSignificance =  (float) totalSignificance / clues.size();
+            averageSignificance =  ((float) totalSignificance / clues.size()) * caseFile.getImportanceFactor(); // previous change
         }
 
         final float SIGNIFICANCE_THRESHOLD = 7.0f;
