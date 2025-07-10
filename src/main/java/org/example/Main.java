@@ -7,7 +7,7 @@ public class Main {
 
         CaseFile case1 = new CaseFile("Museum Robbery"
         //divider
-            , 1);
+            , 1); // previous change
         case1.addClue(new Clue("footprints found on back window", 5));
         sherlock.addCaseFile(case1);
         sherlock.solveCase(case1);
