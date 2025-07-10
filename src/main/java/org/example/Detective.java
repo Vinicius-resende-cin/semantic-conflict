@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Detective {
+    private static final float VIP_FACTOR = 1.5f; // current change
+
     private String name;
     private List<CaseFile> caseFiles;
 
@@ -35,6 +37,10 @@ public class Detective {
         }
 
         final float SIGNIFICANCE_THRESHOLD = 7.0f;
+
+        if (caseFile.getCaseName().contains("VIP:")) { // current change
+            averageSignificance *= VIP_FACTOR;
+        }
 
         if (averageSignificance >= SIGNIFICANCE_THRESHOLD) {
             System.out.println("The case \"" + caseName + "\" is considered solved with an average significance of: " + averageSignificance);
