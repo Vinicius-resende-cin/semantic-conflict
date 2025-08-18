@@ -6,5 +6,7 @@ public class Main {
         case1.addClue(new Clue("footprints found on back window", 5));
         case1.removeLatestClue(); // previous change
         System.out.println("hello world");
+        Clue clueFromCase1 = case1.getNthClue(0); // current change
+
     }
 }

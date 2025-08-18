@@ -46,4 +46,12 @@ public class CaseFile {
 
         return mostSignificantClue;
     }
+
+    public Clue getNthClue(int i) { // current change
+        if (i < 0 || i >= clues.size()) {
+            return null;
+        }
+
+        return clues.get(i);
+    }
 }
