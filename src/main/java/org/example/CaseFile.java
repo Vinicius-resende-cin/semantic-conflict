@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Deque;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CaseFile {
     private String caseName;
@@ -32,15 +33,7 @@ public class CaseFile {
     }
 
     public List<Clue> cluesContaining(String text) {
-        List<Clue> relevantClues = new ArrayList<>();
-
-        for (Clue clue : clues) {
-            if (clue.contains(text)) {
-                relevantClues.add(clue);
-            }
-        }
-
-        return relevantClues;
+        return clues.stream().filter(clue -> clue.contains(text)).collect(Collectors.toList()); // current change
     }
 
     public Clue getMostSignificantClue() {

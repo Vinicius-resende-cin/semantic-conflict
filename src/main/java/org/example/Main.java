@@ -5,7 +5,7 @@ public class Main {
         
         Detective sherlock = new Detective("Sherlock Holmes");
 
-        CaseFile case1 = new CaseFile("Museum Robbery"
+        CaseFile case1 = new CaseFile("VIP: Museum Robbery" // current change
         //divider
             , 1); // previous change
         case1.addClue(new Clue("footprints found on back window", 5));
